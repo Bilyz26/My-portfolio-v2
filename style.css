@@ -1,0 +1,18 @@
+
+        .dark {
+            background-color: rgb(17, 24, 39);
+            color: white;
+        }
+        .dark .navbar {
+            background-color: rgb(31, 41, 55);
+        }
+        .dark .card {
+            background-color: rgb(31, 41, 55);
+        }
+        .dark .section-alt {
+            background-color: rgb(31, 41, 55);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+  
