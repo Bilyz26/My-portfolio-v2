@@ -1,18 +1,55 @@
+/* Dark mode styles */
+body.dark {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
 
-        .dark {
-            background-color: rgb(17, 24, 39);
-            color: white;
-        }
-        .dark .navbar {
-            background-color: rgb(31, 41, 55);
-        }
-        .dark .card {
-            background-color: rgb(31, 41, 55);
-        }
-        .dark .section-alt {
-            background-color: rgb(31, 41, 55);
-        }
-        .transition-all {
-            transition: all 0.3s ease;
-        }
+body.dark .section-alt {
+    background-color: #2d2d2d;
+}
+
+body.dark .card {
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+body.dark .dark-nav {
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+body.dark .hover\:bg-gray-100:hover {
+    background-color: #3d3d3d;
+}
+
+body.dark .bg-gray-100 {
+    background-color: #3d3d3d;
+    color: #ffffff;
+}
+
+body.dark .text-gray-600 {
+    color: #d1d1d1;
+}
+
+body.dark .text-gray-700 {
+    color: #ffffff;
+}
+
+body.dark a.hover\:text-blue-600:hover {
+    color: #60a5fa;
+}
+
+body.dark select {
+    background-color: #3d3d3d;
+    color: #ffffff;
+}
+
+/* Transition for smooth dark mode toggle */
+.navbar,
+.secondary-navbar,
+.card,
+select,
+.section-alt {
+    transition: all 0.3s ease;
+}
   

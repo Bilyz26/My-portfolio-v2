@@ -1,4 +1,3 @@
-
 // Initialize Feather Icons
 feather.replace();
 
@@ -108,10 +107,21 @@ function initializePage() {
 function toggleDarkMode() {
     document.body.classList.toggle('dark');
     const icon = document.querySelector('.dark-toggle');
+    const logoImage = document.getElementById('logo-image');
+    const secondaryNavbar = document.querySelector('.secondary-navbar');
+    
     if (document.body.classList.contains('dark')) {
         icon.setAttribute('data-feather', 'sun');
+        logoImage.src = 'logo/logo white.png';
+        // Add dark mode styles to both navbars
+        document.querySelector('.navbar').classList.add('dark-nav');
+        secondaryNavbar.classList.add('dark-nav');
     } else {
         icon.setAttribute('data-feather', 'moon');
+        logoImage.src = 'logo/logo black.png';
+        // Remove dark mode styles from both navbars
+        document.querySelector('.navbar').classList.remove('dark-nav');
+        secondaryNavbar.classList.remove('dark-nav');
     }
     feather.replace();
 }
