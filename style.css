@@ -52,4 +52,83 @@ select,
 .section-alt {
     transition: all 0.3s ease;
 }
+
+/* Skill label animation */
+@keyframes popUp {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.skill-label {
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.skill-label:hover {
+    transform: scale(1.1);
+}
+
+.skill-label.animate {
+    animation: popUp 0.5s ease forwards;
+}
+
+/* Project card hover animation */
+.card {
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Update dark mode card hover effect */
+body.dark .card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact button styles */
+.contact-btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Light mode styles */
+.contact-btn {
+    background-color: #2563eb; /* blue-600 */
+    color: white;
+}
+
+.contact-btn:hover {
+    background-color: #1d4ed8; /* blue-700 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2),
+                0 2px 4px -1px rgba(37, 99, 235, 0.1);
+}
+
+/* Dark mode styles */
+body.dark .contact-btn {
+    background-color: #3b82f6; /* blue-500 */
+    color: #ffffff;
+}
+
+body.dark .contact-btn:hover {
+    background-color: #60a5fa; /* blue-400 */
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4),
+                0 2px 4px -1px rgba(59, 130, 246, 0.2);
+}
   

@@ -42,24 +42,31 @@ const skills = [
 const projects = [
     {
         title: "FOR YOU Institut Project",
-        description: "Developer and Project Manager (20.08.23 - 20.10.23). Led development initiatives and managed project lifecycles.",
-        tech: ["Project Management", "Development", "Team Leadership"],
-        github: "https://github.com/Bilyz26",
+        description: "School management system tracking classes, payments, sessions, and teacher salaries.",
+        tech: ["Project Management", "Development", "Team Leadership","SQL/SQLServer","C#/ADO.NET"],
+        github: "https://github.com/Bilyz26/School-Management-System",
         demo: "#"
     },
     {
-        title: "NAVIFRET NADOR",
-        description: "Developer (01.07.22 - 17.10.22). Contributed to development projects and implemented software solutions.",
-        tech: ["Software Development", "Web Development"],
-        github: "https://github.com/Bilyz26",
-        demo: "#"
+        title: "GoCAR",
+        description: "Online platform for browsing, selecting, and renting cars easily.",
+        tech: ["Frontend Development","Git/Github" ,"UI/UX Design"],
+        github: "https://github.com/Bilyz26/GoCar-Website",
+        demo: "https://bilyz26.github.io/GoCar-Website/"
     },
     {
-        title: "FOR YOU Institut Initial Project",
-        description: "Developer and Project Manager (07.02.22 - 07.03.22). First experience in project management and development.",
-        tech: ["Project Management", "Development"],
-        github: "https://github.com/Bilyz26",
-        demo: "#"
+        title: "pokemon-pokedex",
+        description: "Comprehensive Pokémon database displaying characters' stats, powers, and classifications.",
+        tech:  ["Git/Github" ,"UI/UX Design","Performance & Best Practices","Data Management & API","Frontend Development"],
+        github: "https://github.com/Bilyz26/pokemon-pokedex",
+        demo: "https://bilyz26.github.io/pokemon-pokedex/"
+    },
+    {
+        title: "ArtisanCraft-Marketplace",
+        description: "Handmade and traditional crafts marketplace connecting artisans with buyers.",
+        tech: ["Git/Github" ,"UI/UX Design","Jira","Teamwork","Frontend Development"],
+        github: "https://github.com/Bilyz26/pokemon-pokedex",
+        demo: "https://bilyz26.github.io/ArtisanCraft-Marketplace/"
     }
 ];
 
@@ -67,11 +74,26 @@ const projects = [
 function initializePage() {
     // Render skills
     const skillsContainer = document.getElementById('skills-container');
-    skillsContainer.innerHTML = skills.map(skill => `
-        <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-700 transition-all">
+    skillsContainer.innerHTML = skills.map((skill, index) => `
+        <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-700 transition-all skill-label" style="animation-delay: ${index * 100}ms">
             ${skill}
         </span>
     `).join('');
+
+    // Add intersection observer for skills animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skillLabels = entry.target.querySelectorAll('.skill-label');
+                skillLabels.forEach(label => {
+                    label.classList.add('animate');
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(skillsContainer);
 
     // Render projects
     const projectsContainer = document.getElementById('projects-container');
