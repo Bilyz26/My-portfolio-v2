@@ -52,23 +52,36 @@
 
     <!-- Header/Hero Section -->
     <header class="pt-24 bg-white shadow-sm section-alt">
-        <div class="max-w-5xl mx-auto px-4 py-16">
-            <div class="flex items-center space-x-8">
-                <img src="image/DSC_0793-21.JPG" alt="Profile" class="w-80 h-80 rounded-full object-cover">
-                <div>
-                    <h1 class="text-4xl font-bold mb-4">Bilal El Yazidi</h1>
-                    <h2 class="text-2xl text-gray-600 mb-6" data-lang-key="hero.title">Full Stack Developer</h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mb-8" data-lang-key="hero.bio">
+        <div class="max-w-5xl mx-auto px-4 py-8 md:py-16">
+            <!-- Changed to flex-col by default, row for medium screens and up -->
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-8 items-center">
+                <!-- Profile Image -->
+                <div class="w-48 h-48 md:w-80 md:h-80 mb-8 md:mb-0">
+                    <img src="image/DSC_0793-21.JPG" alt="Profile" 
+                         class="w-full h-full rounded-full object-cover shadow-lg transition-transform duration-300 hover:scale-105">
+                </div>
+                
+                <!-- Content Container -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4">Bilal El Yazidi</h1>
+                    <h2 class="text-xl md:text-2xl text-gray-600 mb-4 md:mb-6" data-lang-key="hero.title">
+                        Full Stack Developer
+                    </h2>
+                    <p class="text-base md:text-lg text-gray-600 max-w-2xl mb-6 md:mb-8" data-lang-key="hero.bio">
                         Full Stack Developer with experience in project management at FOR YOU Institut and development at NAVIFRET NADOR. Specialized in web development and software solutions.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/Bilyz26" class="text-gray-600 hover:text-gray-900">
+                    <!-- Social Icons -->
+                    <div class="flex justify-center md:justify-start space-x-6">
+                        <a href="https://github.com/Bilyz26" 
+                           class="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-300">
                             <i data-feather="github" class="w-6 h-6"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/bilal-el-yazidi-b3b435211" class="text-gray-600 hover:text-gray-900">
+                        <a href="https://www.linkedin.com/in/bilal-el-yazidi-b3b435211" 
+                           class="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-300">
                             <i data-feather="linkedin" class="w-6 h-6"></i>
                         </a>
-                        <a href="mailto:bilalelyazidi17@gmail.com" class="text-gray-600 hover:text-gray-900">
+                        <a href="mailto:bilalelyazidi17@gmail.com" 
+                           class="text-gray-600 hover:text-gray-900 transform hover:scale-110 transition-all duration-300">
                             <i data-feather="mail" class="w-6 h-6"></i>
                         </a>
                     </div>
